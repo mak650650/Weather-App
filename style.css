@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+:root {
+    --main-bg-color: url('./bg.jpg');
+    --dashboard-bg:rgba(0, 0, 0, 0);
+    --larger-h1:clamp(.1rem ,5vw + 1rem, 20rem);
+    --smaller:clamp(.1rem ,1vw + .2rem, 10rem);
+    --medium:clamp(.1rem ,5vw + 1rem, 20rem);
+    --color-h1: rgba(144, 240, 255, 0.929);
+    --global-font: 'Teko', sans-serif;
+    --search-bar-width:clamp(.9rem ,20vw + 1rem, 20rem);
+    --search-bar-heigth:clamp(.9rem ,1.25vh + 1rem, 20rem);
+    --search-bar-color : rgb(126, 255, 236);
+    --search-button-font-size :13px;
+}
+
+body{
+    background-image: var(--main-bg-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: right;
+    
+    position: relative;
+    
+  }
+#dashboardcontainer{
+    position: absolute;
+    display: flex;
+    width: calc(100% - 100px);
+    height: calc(100dvh - 120px);
+    margin : 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 0px;
+    
+    border:3px;
+    border-radius: 30px;
+    box-shadow: 3px 10px 10px 100px rgba(34, 34, 34, 0.879) ;
+    font-size: var(--larger-h1);
+    background-color: var(--dashboard-bg);
+    position: relative;
+}
+h1{
+    color: var(--color-h1);
+    font-family: var(--global-font);
+ 
+   
+}
+h1::before{
+    content:'#001';
+    font-size: var(--medium);
+    display: block;
+    position: fixed;
+    text-align: center;
+    color:  rgba(126, 255, 236, 0.564);
+    left:10px;
+    top:200px;
+    transform:rotate(90deg);
+}
+h1::after{
+    content: ' WeatherWeb App: Real-time updates, detailed forecasts, interactive maps, alerts, and more. Your ultimate weather companion for accurate and up-to-date information.';
+    font-size: var(--smaller);
+    display: block;
+    position: fixed;
+    text-align: center;
+     top: 10px;
+     left:20px;
+     right:20px;
+     color:  rgba(126, 255, 236, 0.361);
+   
+
+
+}
+#search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.location{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px;
+ 
+  
+}
+.location>select{
+  border-radius: 20px 0px 0px 20px;
+  width:  var( --search-bar-width);
+  height: var(--search-bar-heigth);
+  padding-left: 30px;
+  font-size: var(--search-button-font-size);
+  color: rgba(0, 0, 0, 0.634);
+}
+.search{
+    border: 2px 2px 0px 0px  solid rgb(0, 0, 0);
+    border-radius: 0px 20px 20px 0px;
+    padding: 4px 10px 4px 10px;
+    background-color: var(--search-bar-color);
+    color: rgb(0, 0, 0);
+    height: var(--search-bar-heigth);
+    cursor: pointer;
+    font-size: var(--search-button-font-size);
+    
+}
+.location-region{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+}
+.location-region>select{
+    border-radius: 0px 0px 0px 0px;
+    width:  var( --search-bar-width);
+    height: var(--search-bar-heigth);
+    padding-left: 30px;
+    font-size: var(--search-button-font-size);
+    color: rgba(0, 0, 0, 0.634);
+}
+option{
+    padding:2px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(126, 255, 236);
+}
+
+
+@media screen and (max-width:700px) {
+    :root {
+        --larger-h1:clamp(.5rem ,5vw + .2rem, 5rem);
+        --search-button-font-size: 10px;
+        --search-bar-width:clamp(.9rem ,40vw + 1rem, 20rem);
+    }
+   
+    #dashboardcontainer{
+        background-color: rgba(0, 0, 0, 0.42);
+    }
+    #search-container{
+        flex-direction: column;
+    }
+   
+    .location>select{
+        padding-left: 0px;
+        text-align: center;
+         border: 2px solid rgb(255, 255, 255);
+         border-radius: 20px;
+         width:var( --search-bar-width);
+         font-size: var(--search-button-font-size);
+       
+       }
+    .search{
+            margin-top: 10px;
+           border: 2px ;
+           border-radius: 20px;
+           padding: 2.7px 15px 2.7px 15px;
+           width:auto;
+           font-size: var(--search-button-font-size);
+    }
+    .location-region{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0px;
+        
+    }
+    .location-region>select{
+        margin-top: 10px;
+        padding-left: 0px;
+        text-align: center;
+         border: 2px solid rgb(255, 255, 255);
+         border-radius: 20px;
+         width:var( --search-bar-width);
+         font-size: var(--search-button-font-size);
+      
+    }
+    
+    
+}
+
+
