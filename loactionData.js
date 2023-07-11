@@ -1,0 +1,37 @@
+export const countryRegions = {
+    India:[
+            [ 
+             "Andhra Pradesh",  "Arunachal Pradesh",  "Assam",  "Bihar",  "Chhattisgarh",  "Goa",  "Gujarat",  "Haryana",  "Himachal Pradesh",  "Jharkhand",  "Karnataka",  "Kerala",  "Madhya Pradesh",  "Maharashtra",  "Manipur",  "Meghalaya",  "Mizoram",  "Nagaland",  "Odisha",  "Punjab",  "Rajasthan",  "Sikkim",  "Tamil Nadu",  "Telangana",  "Tripura",  "Uttar Pradesh",  "Uttarakhand",  "West Bengal"
+            ],
+            {
+            "Andhra Pradesh": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Kurnool"],
+            "Arunachal Pradesh": ["Itanagar", "Naharlagun", "Pasighat", "Namsai", "Roing"],
+            Assam: ["Guwahati", "Dibrugarh", "Silchar", "Jorhat", "Nagaon"],
+            Bihar: ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Purnea"],
+            Chhattisgarh: ["Raipur", "Bhilai", "Bilaspur", "Korba", "Durg"],
+            Goa: ["Panaji", "Margao", "Vasco da Gama", "Ponda", "Mapusa"],
+            Gujarat: ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhavnagar"],
+            Haryana: ["Faridabad", "Gurgaon", "Hisar", "Panipat", "Karnal"],
+            "Himachal Pradesh": ["Shimla", "Mandi", "Solan", "Dharamshala", "Kullu"],
+            Jharkhand: ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro", "Hazaribagh"],
+            Karnataka: ["Bengaluru", "Mysore", "Hubli-Dharwad", "Mangalore", "Belgaum"],
+            Kerala: ["Thiruvananthapuram", "Kochi", "Kozhikode", "Thrissur", "Kollam"],
+            "Madhya Pradesh": ["Bhopal", "Indore", "Jabalpur", "Gwalior", "Ujjain"],
+            Maharashtra: ["Mumbai", "Pune", "Nagpur", "Thane", "Nashik"],
+            Manipur: ["Imphal", "Thoubal", "Kakching", "Ukhrul", "Chandel"],
+            Meghalaya: ["Shillong", "Tura", "Nongstoin", "Jowai", "Baghmara"],
+            Mizoram: ["Aizawl", "Lunglei", "Champhai", "Serchhip", "Kolasib"],
+            Nagaland: ["Kohima", "Dimapur", "Mokokchung", "Tuensang", "Wokha"],
+            Odisha: ["Bhubaneswar", "Cuttack", "Rourkela", "Berhampur", "Sambalpur"],
+            Punjab: ["Chandigarh", "Ludhiana", "Amritsar", "Jalandhar", "Patiala"],
+            Rajasthan: ["Jaipur", "Jodhpur", "Udaipur", "Kota", "Ajmer"],
+            Sikkim: ["Gangtok", "Namchi", "Gyalshing", "Ravangla", "Mangan"],
+            "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem"],
+            Telangana: ["Hyderabad", "Warangal", "Nizamabad", "Khammam", "Karimnagar"],
+            Tripura: ["Agartala", "Udaipur", "Dharmanagar", "Kailashahar", "Belonia"],
+            "Uttar Pradesh": ["Lucknow", "Kanpur", "Varanasi", "Agra", "Meerut"],
+            Uttarakhand: ["Dehradun", "Haridwar", "Roorkee", "Haldwani", "Rudrapur"],
+            "West Bengal": ["Kolkata", "Howrah", "Asansol", "Siliguri", "Durgapur"],
+            },
+        ],
+}
