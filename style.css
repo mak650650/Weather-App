@@ -8,7 +8,7 @@
 }
 
 :root {
-    --main-bg-color: url('./bg.jpg');
+    --main-bg-color: url('./image/bg.jpg');
     --dashboard-bg:rgba(0, 0, 0, 0);
     --larger-h1:clamp(.1rem ,5vw + 1rem, 20rem);
     --smaller:clamp(.1rem ,1vw + .2rem, 10rem);
@@ -77,9 +77,6 @@ h1::after{
      left:20px;
      right:20px;
      color:  rgba(126, 255, 236, 0.361);
-   
-
-
 }
 #search-container{
     display: flex;
@@ -183,8 +180,9 @@ option{
          font-size: var(--search-button-font-size);
       
     }
-    
-    
+    h1::before{
+        left: 40px; 
+    } 
 }
 
 
