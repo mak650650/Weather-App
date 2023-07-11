@@ -182,6 +182,7 @@ option{
     }
     h1::before{
         left: 40px; 
+         top:150px;
     } 
 }
 
