@@ -10,16 +10,13 @@ export const countryValue = ()=>{
         let  key = [];
         let value = selectOne.options[selectOne.selectedIndex].innerHTML;
         key.push(value);
-        console.log(key);//
         if(key.length > 0){
             let regionArray = countryRegions[key[0]];
-            console.log(regionArray[0]);
             for(let i = 0; i<regionArray[0].length;i++ ){
                 selectTwo.appendChild( document.createElement("option")); 
                 selectTwo.options[i+1].innerHTML = regionArray[0][i]; 
             }
-            let updatedRegion = selectTwo.options;
-            console.log(updatedRegion); //
+           
         }
         else{
             console.warn("'key' ARRAY IS EMPTY");
@@ -30,10 +27,6 @@ export const countryValue = ()=>{
     catch (error) {
         console.error(error);
     }
-    finally{
-        console.log("TASK-1 COMPLETED");
-    }
-
 }
 
 export const stateValue = function(country){
@@ -42,19 +35,14 @@ export const stateValue = function(country){
         let  state = [];
         let stateName = selectTwo.options[selectTwo.selectedIndex].innerHTML;
         state.push(stateName);
-        
-        console.log(state[0] + " --- "+ country[0]);
-        
         let cities = countryRegions[country[0]][1][state[0]];
         if(cities.length > 0){
-            
-            console.log(cities);;
+
             for(let i = 0; i<cities.length;i++ ){
                 selectThree.appendChild( document.createElement("option")); 
                 selectThree.options[i+1].innerHTML = cities[i]; 
             }
-            let updatedRegion = selectThree.options;
-            console.log(updatedRegion);
+           
 
         }else{ console.warn("'key' ARRAY IS EMPTY");}
     
@@ -62,9 +50,6 @@ export const stateValue = function(country){
 
     } catch (error) {
         console.error(error);
-    }
-    finally{
-        console.log("TASK-2 COMPLETED");
     }
 };
 export const cityValue = function(){ 
@@ -83,3 +68,4 @@ export const cityValue = function(){
     }
 
 };
+
