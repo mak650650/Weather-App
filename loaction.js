@@ -2,14 +2,16 @@ import { countryRegions } from "./loactionData.js";
 
 export const selectOne = document.getElementsByTagName("select")[0];
 export const selectTwo = document.getElementsByTagName("select")[1];
-export const locationValue = ()=>{
+export const selectThree = document.getElementsByTagName("select")[2];
+export const searchButton = document.getElementsByClassName('search')[0];
+export const countryValue = ()=>{
     try {
         
         let  key = [];
         let value = selectOne.options[selectOne.selectedIndex].innerHTML;
         key.push(value);
         console.log(key);//
-        if(key.length !== 0){
+        if(key.length > 0){
             let regionArray = countryRegions[key[0]];
             console.log(regionArray[0]);
             for(let i = 0; i<regionArray[0].length;i++ ){
@@ -29,8 +31,55 @@ export const locationValue = ()=>{
         console.error(error);
     }
     finally{
-        console.log("TASK COMPLETED")
-        ;
+        console.log("TASK-1 COMPLETED");
     }
 
 }
+
+export const stateValue = function(country){
+    try {
+        //country is array
+        let  state = [];
+        let stateName = selectTwo.options[selectTwo.selectedIndex].innerHTML;
+        state.push(stateName);
+        
+        console.log(state[0] + " --- "+ country[0]);
+        
+        let cities = countryRegions[country[0]][1][state[0]];
+        if(cities.length > 0){
+            
+            console.log(cities);;
+            for(let i = 0; i<cities.length;i++ ){
+                selectThree.appendChild( document.createElement("option")); 
+                selectThree.options[i+1].innerHTML = cities[i]; 
+            }
+            let updatedRegion = selectThree.options;
+            console.log(updatedRegion);
+
+        }else{ console.warn("'key' ARRAY IS EMPTY");}
+    
+        return state;
+
+    } catch (error) {
+        console.error(error);
+    }
+    finally{
+        console.log("TASK-2 COMPLETED");
+    }
+};
+export const cityValue = function(){ 
+    try {
+        //country is array and region is array
+        let  city = [];
+        let cityName = selectThree.options[selectThree.selectedIndex].innerHTML;
+        city.push(cityName);
+        return city;
+        
+    } catch (error) {
+        console.error(error);
+    }
+    finally{
+        console.log("TASK-3 COMPLETED");
+    }
+
+};

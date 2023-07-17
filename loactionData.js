@@ -34,4 +34,4 @@ export const countryRegions = {
             "West Bengal": ["Kolkata", "Howrah", "Asansol", "Siliguri", "Durgapur"],
             },
         ],
-}
+};
