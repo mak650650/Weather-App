@@ -13,7 +13,7 @@ const APP ={
                 UTIL.getCityDataFromUser(cityValue, selectThree).then((city)=>{
                     warn("CITY ENTERED:- "+ city);
                     UTIL.onSearchButtonClick(searchButton).then((e)=>{
-                        console.log(e)
+                        warn("BUTTON CLICKED");
                         const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13/'+country+'/'+region+'/'+city;
                         const options = {
                             method: 'GET',
@@ -23,7 +23,7 @@ const APP ={
                             }
                         };
                         UTIL.getDataFromWeatherAPI(url,options).then((response)=>{
-                            warn("HURRY! We Got a Response :-");
+                            warn("API CALL MADE");
                             UTIL.dataInJSON(response).then((res)=>{
                                 log(res);
                             })// JSONS .THEN ENDS HERE
@@ -47,3 +47,4 @@ const APP ={
 }
 
 document.addEventListener("DOMContentLoaded",APP.init);
+
