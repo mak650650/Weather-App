@@ -1,5 +1,5 @@
 import { UTIL } from "./utility.js";
-import { countryValue , stateValue , cityValue , selectOne , selectTwo , selectThree , searchButton } from "./loaction.js";
+import { countryValue , stateValue , cityValue , selectOne , selectTwo , selectThree , searchButton , page2} from "./loaction.js";
 
 const log = console.log;
 const warn = console.warn;
@@ -14,7 +14,7 @@ const APP ={
                     warn("CITY ENTERED:- "+ city);
                     UTIL.onSearchButtonClick(searchButton).then((e)=>{
                         warn("BUTTON CLICKED");
-                        const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13/'+country+'/'+region+'/'+city;
+                        const url = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q='+country+'/'+region+'/'+city+'&days=3';
                         const options = {
                             method: 'GET',
                             headers: {
@@ -26,6 +26,9 @@ const APP ={
                             warn("API CALL MADE");
                             UTIL.dataInJSON(response).then((res)=>{
                                 log(res);
+                                UTIL.updatingPage2(page2,res).then(()=>{
+
+                                })
                             })// JSONS .THEN ENDS HERE
                         },(response)=>{
                             console.error(response);
@@ -47,4 +50,3 @@ const APP ={
 }
 
 document.addEventListener("DOMContentLoaded",APP.init);
-

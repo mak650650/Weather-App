@@ -45,4 +45,9 @@ export const UTIL = {
     dataInJSON(response){
         return response.json();
     },
+    updatingPage2(page2,res){
+        return new Promise(function(resolve){
+            resolve(page2(res));
+        });
+    },
 };

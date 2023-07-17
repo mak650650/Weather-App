@@ -4,6 +4,7 @@ export const selectOne = document.getElementsByTagName("select")[0];
 export const selectTwo = document.getElementsByTagName("select")[1];
 export const selectThree = document.getElementsByTagName("select")[2];
 export const searchButton = document.getElementsByClassName('search')[0];
+
 export const countryValue = ()=>{
     try {
         
@@ -63,5 +64,40 @@ export const cityValue = function(){
     } catch (error) {
         console.error(error);
     }
+    
 };
 
+export const dashboard1 = document.getElementById('dashboardcontainer');
+export const dashboard2 = document.getElementById('dashboardcontainer-page-2');
+const gp1_block1 = dashboard2.children[0].children[0].children[0];
+const gp1_block2 = dashboard2.children[0].children[0].children[1];
+
+const gp2_block = dashboard2.children[0].children[1].children[0];
+
+const gp3_block = dashboard2.children[1].children[0].children[0];
+
+const gp4_block1 = dashboard2.children[1].children[1].children[0];
+const gp4_block2 = dashboard2.children[1].children[1].children[1];
+const gp4_block3 = dashboard2.children[1].children[1].children[2];
+
+const background  = document.body;
+
+export const page2 = function(res) {
+    try {
+        
+        dashboard1.style.visibility = 'hidden';
+        dashboard2.style.visibility = 'visible';
+        gp1_block2.style.color = "white";
+        background.style.backgroundImage = `url('/image/bg-sunnyDay.jpg')`;
+        gp1_block2.children[0].innerText = `${res.current.temp_c} °C`; 
+        gp1_block2.children[1].innerText = `feels like :- ${res.current.feelslike_c}`
+
+    
+        gp2_block.children[1].innerText = `${res.location.name} ,${res.location.region} ,${res.location.country}`;
+
+        gp3_block.children[0].innerText = `${res.current.condition.text}`;
+
+    } catch (error) {
+        console.error(error);
+    }
+};

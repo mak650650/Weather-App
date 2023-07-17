@@ -9,17 +9,24 @@
 
 :root {
     --main-bg-color: url('./image/bg.jpg');
-    --dashboard-bg:rgba(0, 0, 0, 0);
+    --dashboard-bg:rgba(44, 44, 44, 0.459);
     --larger-h1:clamp(.1rem ,5vw + 1rem, 20rem);
+    --large:clamp(.1rem ,2.5vw + 1.25rem, 20rem);
+    --p:clamp(.1rem ,1vw + .3rem, 20rem);
+    --medium-font:clamp(.1rem ,3.5vw + .7rem, 20rem);
     --smaller:clamp(.1rem ,1vw + .2rem, 10rem);
+    --small:clamp(.5rem ,.95vw + .1rem, 20rem);
     --medium:clamp(.1rem ,5vw + 1rem, 20rem);
     --color-h1: rgba(144, 240, 255, 0.929);
     --global-font: 'Teko', sans-serif;
+    --page2-block-bg: rgba(51, 51, 51, 0.2);
+    --page2-dashboard-bg: rgba(0, 6, 59, 0.292);
     --search-bar-width:clamp(.9rem ,20vw + 1rem, 20rem);
     --search-bar-heigth:clamp(.9rem ,1.25vh + 1rem, 20rem);
-    --search-bar-color : rgb(126, 255, 236);
-    --search-button-font-size :13px;
+    --search-bar-color : rgba(144, 240, 255, 0.929);
+    --search-button-font-size :17px;
 }
+
 
 body{
     background-image: var(--main-bg-color);
@@ -29,10 +36,12 @@ body{
     background-position: right;
     
     position: relative;
+    overflow: hidden;
     
   }
 #dashboardcontainer{
     position: absolute;
+    z-index: 0;
     display: flex;
     width: calc(100% - 100px);
     height: calc(100dvh - 120px);
@@ -46,15 +55,241 @@ body{
     border:3px;
     border-radius: 30px;
     box-shadow: 3px 10px 10px 100px rgba(34, 34, 34, 0.879) ;
+    background-color: rgba(0, 0, 0, 0.42);
     font-size: var(--larger-h1);
     background-color: var(--dashboard-bg);
+    visibility: none;
+    transition: all ease 0.3;   
+    visibility: none;
+}
+#dashboardcontainer-page-2{
+
+    width: calc(100% - 100px);
+    height: calc(100dvh - 120px);
+    margin : 10px;
+    font-family: var(--global-font);
+    box-shadow: 3px 10px 10px 100px rgba(34, 34, 34, 0.879) ;
+    background-color: rgba(0, 0, 0, 0.686);
+    position: relative;
+    top:50px;
+    left:40px;
+    padding: 2px;
+    border-radius: 30px;
+    visibility: hidden;
+    background-color: var(--page2-dashboard-bg);
+}
+body::before{
+    content: ' WeatherWeb App: Real-time updates, detailed forecasts, interactive maps, alerts, and more. Your ultimate weather companion for accurate and up-to-date information.';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    z-index: 2;
+    font-size: var(--smaller);
+    font-family: var(--global-font);
+    display: block;
+    position: fixed;
+    text-align: center;
+     top: 15px;
+     left:20px;
+     right:20px;
+     color:  rgba(126, 255, 236, 0.361);
+    
+}
+#dashboardcontainer-page-2::after{
+    content: '#002';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    font-size:var(--medium);
+    color: rgba(255, 255, 255, 0.692);
+    font-weight: bold;
+    left:33%;
+    top:10px;
+    
+   
+}
+
+.gp1{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+}
+.data1,
+.data2{
+    padding: 20px;
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content:center; 
+    flex-direction: column;
+    position: relative;
+    
+}
+.data1{
+    height: 70%;
+}
+.data2{
+    height: 30%;
+}
+
+.data1-subdata1{
+    border-radius: 10px 10px 10px 10px;
+    width: 90%;
+    height: 5%;
+    position: absolute;
+    left:5%;
+    top:5%;
+    background-color: var(--page2-block-bg);
+    padding: 20px;
+}
+.data1-subdata2{
+    border-radius: 10px 10px 10px 10px;
+    width: 90%;
+    height: 80%;
+    position: absolute;
+    left:5%;
+    top:15%;
+    background-color: var(--page2-block-bg);
+    padding: 20px 20px 20px 30px;
+}
+.data2-subdata{
+    border-radius: 10px 10px 10px 10px;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    left:5%;
+    top:5%;
+    background-color: var(--page2-block-bg);
+    padding: 20px;
+    font-size: var(--p);
+    color: rgba(255, 255, 255, 0.692);
+    font-weight: bolder;
+}
+
+
+
+.gp2{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    left:30%;
+}
+.data3,
+.data4{
+    
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content:center; 
+    flex-direction: column;
     position: relative;
 }
+.data3{
+    height: 70%;
+}
+.data4{
+    height: 30%;
+    display: flex;
+}
+
+.data3-subdata{
+    border: 2px;
+    border-radius: 50px 50px 20px 20px;
+    width: 95%;
+    height: 90%;
+    position: absolute;
+    left:2%;
+    top:5%;
+    background-color: var(--page2-block-bg);
+    padding: 80px 0px 0px 30px;
+    
+}
+
+.data4-subdata1{
+    border: 2px;
+    border-radius: 5px 5px 50px 50px;
+    width: 95%;
+    height: 80%;
+    position: absolute;
+    left:2%;
+    top:15%;
+    background-color: var(--page2-block-bg);
+}
+.data4-subdata1::before{
+    content:'Today';
+    font-size: var(--small);
+    position: absolute;
+    border: 2px ;
+    border-radius: 20px 0px 0px 5px;
+    background-color: var(--page2-block-bg);
+    width: 33.3%;
+    height: 20%;
+    top:-22%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    cursor: pointer;
+}
+.data4-subdata2{
+    border: 2px;
+    border-radius: 50px;
+    width: 95%;
+    height: 80%;
+    position: absolute;
+    left:2%;
+    top:15%;
+}
+.data4-subdata2::before{
+    content:'Tomorrow';
+    font-size: var(--small);
+    position: absolute;
+    border: 2px ;
+    border-radius: 0px 0px 0px 0px;
+    background-color: var(--page2-block-bg);
+    width: 33.3%;
+    height: 20%;
+    top:-22%;
+    left:33.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    cursor: pointer;
+}
+.data4-subdata3{
+    border: 2px;
+    border-radius: 50px;
+    width: 95%;
+    height: 80%;
+    position: absolute;
+    left:2%;
+    top:15%;
+}
+.data4-subdata3::before{
+    content:'Day after tomorrow';
+    font-size: var(--small);
+    position: absolute;
+    border: 2px ;
+    border-radius: 0px 20px 5px 0px;
+    background-color: var(--page2-block-bg);
+    width: 33.3%;
+    height: 20%;
+    top:-22%;
+    left:67%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    cursor: pointer;
+}
+
+
 h1{
     color: var(--color-h1);
     font-family: var(--global-font);
- 
-   
 }
 h1::before{
     content:'#001';
@@ -65,18 +300,20 @@ h1::before{
     color:  rgba(126, 255, 236, 0.564);
     left:10px;
     top:200px;
-    transform:rotate(90deg);
+    transform:rotate(270deg);
 }
-h1::after{
-    content: ' WeatherWeb App: Real-time updates, detailed forecasts, interactive maps, alerts, and more. Your ultimate weather companion for accurate and up-to-date information.';
+
+h2{
+    font-size: var(--large);
+}
+h3{
+    font-size: var(--medium-font);
+    color: var(--color-h1);
+}
+p{
+    color: rgba(255, 255, 255, 0.692);
+    padding-left: 20px;
     font-size: var(--smaller);
-    display: block;
-    position: fixed;
-    text-align: center;
-     top: 10px;
-     left:20px;
-     right:20px;
-     color:  rgba(126, 255, 236, 0.361);
 }
 #search-container{
     display: flex;
@@ -93,22 +330,28 @@ h1::after{
   
 }
 .location>select{
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 0px 10px 0px 10px;
   width:  var( --search-bar-width);
   height: var(--search-bar-heigth);
   padding-left: 30px;
   font-size: var(--search-button-font-size);
   color: rgba(0, 0, 0, 0.634);
+  background-color: rgba(255, 255, 255, 0.692);
+  font-family: var(--global-font);
+    font-weight: bold;
 }
 .search{
-    border: 2px 2px 0px 0px  solid rgb(0, 0, 0);
-    border-radius: 0px 20px 20px 0px;
-    padding: 4px 10px 4px 10px;
+    border: 0px 0px 0px 0px  solid rgb(0, 0, 0);
+    border-radius: 10px 10px 10px 10px;
+    padding: 2px 15px 5px 15px;
     background-color: var(--search-bar-color);
     color: rgb(0, 0, 0);
     height: var(--search-bar-heigth);
     cursor: pointer;
     font-size: var(--search-button-font-size);
+    font-family: var(--global-font);
+    font-weight: normal;
     
 }
 .location-region{
@@ -118,17 +361,25 @@ h1::after{
     border: 0px;
 }
 .location-region>select{
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 5px 5px 5px 5px;
+  margin: 0px 10px 0px 10px;
     width:  var( --search-bar-width);
     height: var(--search-bar-heigth);
     padding-left: 30px;
     font-size: var(--search-button-font-size);
     color: rgba(0, 0, 0, 0.634);
+    background-color: rgba(255, 255, 255, 0.692);
+    font-family: var(--global-font);
+    font-weight: bold;
 }
 option{
-    padding:2px;
+    margin: 10px;
     color: rgb(0, 0, 0);
-    background-color: rgb(126, 255, 236);
+    font-family: var(--global-font);
+    font-weight: normal;
+    font-size: var(--smaller);
+    background-color: rgb(103, 165, 156);
+    text-align: start;
 }
 
 
@@ -150,7 +401,7 @@ option{
         padding-left: 0px;
         text-align: center;
          border: 2px solid rgb(255, 255, 255);
-         border-radius: 20px;
+         border-radius: 5px;
          width:var( --search-bar-width);
          font-size: var(--search-button-font-size);
        
@@ -158,7 +409,7 @@ option{
     .search{
             margin-top: 10px;
            border: 2px ;
-           border-radius: 20px;
+           border-radius: 7px;
            padding: 2.7px 15px 2.7px 15px;
            width:auto;
            font-size: var(--search-button-font-size);
@@ -175,7 +426,7 @@ option{
         padding-left: 0px;
         text-align: center;
          border: 2px solid rgb(255, 255, 255);
-         border-radius: 20px;
+         border-radius: 5px;
          width:var( --search-bar-width);
          font-size: var(--search-button-font-size);
       

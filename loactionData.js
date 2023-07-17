@@ -29,7 +29,7 @@ export const countryRegions = {
             "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem"],
             Telangana: ["Hyderabad", "Warangal", "Nizamabad", "Khammam", "Karimnagar"],
             Tripura: ["Agartala", "Udaipur", "Dharmanagar", "Kailashahar", "Belonia"],
-            "Uttar Pradesh": ["Lucknow", "Kanpur", "Varanasi", "Agra", "Meerut","Sultanpur"],
+            "Uttar Pradesh": ["Lucknow", "Kanpur", "Varanasi", "Agra", "Meerut"],
             Uttarakhand: ["Dehradun", "Haridwar", "Roorkee", "Haldwani", "Rudrapur"],
             "West Bengal": ["Kolkata", "Howrah", "Asansol", "Siliguri", "Durgapur"],
             },
