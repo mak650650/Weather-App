@@ -63,9 +63,5 @@ export const cityValue = function(){
     } catch (error) {
         console.error(error);
     }
-    finally{
-        console.log("TASK-3 COMPLETED");
-    }
-
 };
 
