@@ -12,8 +12,7 @@ const APP ={
                 warn("REGION ENTERED:- "+ region);
                 UTIL.getCityDataFromUser(cityValue, selectThree).then((city)=>{
                     warn("CITY ENTERED:- "+ city);
-                    UTIL.onSearchButtonClick(searchButton).then((e)=>{
-                        warn("BUTTON CLICKED");
+                    warn("BUTTON CLICKED");
                         const url = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q='+country+'/'+region+'/'+city+'&days=3';
                         const options = {
                             method: 'GET',
@@ -26,14 +25,17 @@ const APP ={
                             warn("API CALL MADE");
                             UTIL.dataInJSON(response).then((res)=>{
                                 log(res);
-                                UTIL.updatingPage2(page2,res).then(()=>{
+                                UTIL.onSearchButtonClick(searchButton).then((e)=>{
+                                    UTIL.updatingPage2(page2,res).then(()=>{
 
+                                    })
                                 })
+                               
                             })// JSONS .THEN ENDS HERE
                         },(response)=>{
                             console.error(response);
                         })// API CALL .THEN ENDS HERE
-                    })
+                    
                    
                 },(error_city)=>{
                     console.error(error_city);

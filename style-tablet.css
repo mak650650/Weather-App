@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+:root {
+    --main-bg-color: url('./image/bg.jpg');
+    --dashboard-bg:rgba(44, 44, 44, 0.459);
+    --larger-h1:clamp(.1rem ,5vw + 1rem, 20rem);
+    --large:clamp(.1rem ,2.5vw + 1.25rem, 20rem);
+    --p:clamp(.1rem ,1vw + .3rem, 20rem);
+    --medium-font:clamp(.1rem ,1vw + .7rem, 20rem);
+    --smaller:clamp(.1rem ,1vw + .2rem, 10rem);
+    --small:clamp(.5rem ,.95vw + .1rem, 20rem);
+    --medium:clamp(.1rem ,5vw + 1rem, 20rem);
+    --color-h1: rgba(144, 240, 255, 0.929);
+    --global-font: 'Teko', sans-serif;
+    --page2-block-bg: rgba(51, 51, 51, 0.2);
+    --page2-block-bg-dark:rgba(0, 42, 47, 0.292);
+    --page2-dashboard-bg: rgba(0, 6, 59, 0.189);
+    --search-bar-width:clamp(.9rem ,20vw + 1rem, 20rem);
+    --search-bar-heigth:clamp(.9rem ,1.25vh + 1rem, 20rem);
+    --search-bar-color : rgba(144, 240, 255, 0.929);
+    --search-button-font-size :17px;
+    --small-data-font:clamp(.5rem ,.5vw + .45rem, 20rem);
+}
+.align{
+    margin-top: 20px;
+    line-height: 5px;
+    margin-left: 0px;
+    font-size: var(--small-data-font);
+}
+.feelslike{   
+    margin-left: 0px;     
+}
+.loc1,
+.loc2,
+.loc3{
+
+    margin-left:0px;
+}

@@ -88,14 +88,25 @@ export const page2 = function(res) {
         dashboard1.style.visibility = 'hidden';
         dashboard2.style.visibility = 'visible';
         gp1_block2.style.color = "white";
-        background.style.backgroundImage = `url('/image/bg-sunnyDay.jpg')`;
+       
+
+        gp1_block1.children[0].innerText = ` ${res.location.name} ,${res.location.region} ,${res.location.country}`;
+
         gp1_block2.children[0].innerText = `${res.current.temp_c} °C`; 
-        gp1_block2.children[1].innerText = `feels like :- ${res.current.feelslike_c}`
+        gp1_block2.children[1].innerText = ` Feels like :- ${res.current.feelslike_c} °C`
+        gp1_block2.children[2].innerText = ` Humidity :- ${res.current.humidity}`
+        gp1_block2.children[3].innerText = ` Precipitaion :- ${res.current.precip_mm} mm`
+        gp1_block2.children[4].innerText = ` Wind Speed :- ${res.current.wind_kph} kph`
 
-    
-        gp2_block.children[1].innerText = `${res.location.name} ,${res.location.region} ,${res.location.country}`;
 
-        gp3_block.children[0].innerText = `${res.current.condition.text}`;
+        gp2_block.children[0].innerText = ` Lat x Log:- ${res.location.lat} x ${res.location.lon}`;
+        gp2_block.children[1].innerText = ` Local Time:- ${res.location.localtime}`;
+        gp2_block.children[2].innerText = ` Timezone:- ${res.location.tz_id}`;
+
+
+        gp3_block.children[0].innerText = `STATUS:-
+        \n  ${res.current.condition.text}`;
+        gp3_block.children[1].innerText = ` Last Updated:- ${res.current.last_updated} `
 
     } catch (error) {
         console.error(error);

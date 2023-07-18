@@ -1,3 +1,6 @@
+@import url("./style-tablet.css") screen and (min-width: 750px) and (max-width: 1100px);
+@import url("./style-mobile.css") screen and (max-width: 750px);
+
 *,
 *::before,
 *::after{
@@ -13,18 +16,20 @@
     --larger-h1:clamp(.1rem ,5vw + 1rem, 20rem);
     --large:clamp(.1rem ,2.5vw + 1.25rem, 20rem);
     --p:clamp(.1rem ,1vw + .3rem, 20rem);
-    --medium-font:clamp(.1rem ,3.5vw + .7rem, 20rem);
+    --medium-font:clamp(.1rem ,1vw + .7rem, 20rem);
     --smaller:clamp(.1rem ,1vw + .2rem, 10rem);
     --small:clamp(.5rem ,.95vw + .1rem, 20rem);
     --medium:clamp(.1rem ,5vw + 1rem, 20rem);
     --color-h1: rgba(144, 240, 255, 0.929);
     --global-font: 'Teko', sans-serif;
     --page2-block-bg: rgba(51, 51, 51, 0.2);
-    --page2-dashboard-bg: rgba(0, 6, 59, 0.292);
+    --page2-block-bg-dark:rgba(0, 42, 47, 0.292);
+    --page2-dashboard-bg: rgba(0, 6, 59, 0.189);
     --search-bar-width:clamp(.9rem ,20vw + 1rem, 20rem);
     --search-bar-heigth:clamp(.9rem ,1.25vh + 1rem, 20rem);
     --search-bar-color : rgba(144, 240, 255, 0.929);
     --search-button-font-size :17px;
+    --small-data-font:clamp(.5rem ,.5vw + .45rem, 20rem);
 }
 
 
@@ -61,6 +66,7 @@ body{
     visibility: none;
     transition: all ease 0.3;   
     visibility: none;
+    overflow: hidden;
 }
 #dashboardcontainer-page-2{
 
@@ -77,7 +83,10 @@ body{
     border-radius: 30px;
     visibility: hidden;
     background-color: var(--page2-dashboard-bg);
+    overflow: hidden;
+    position: relative;
 }
+
 body::before{
     content: ' WeatherWeb App: Real-time updates, detailed forecasts, interactive maps, alerts, and more. Your ultimate weather companion for accurate and up-to-date information.';
     position: absolute;
@@ -94,19 +103,6 @@ body::before{
      right:20px;
      color:  rgba(126, 255, 236, 0.361);
     
-}
-#dashboardcontainer-page-2::after{
-    content: '#002';
-    position: absolute;
-    width: 100%;
-    height: 100px;
-    font-size:var(--medium);
-    color: rgba(255, 255, 255, 0.692);
-    font-weight: bold;
-    left:33%;
-    top:10px;
-    
-   
 }
 
 .gp1{
@@ -136,35 +132,39 @@ body::before{
 .data1-subdata1{
     border-radius: 10px 10px 10px 10px;
     width: 90%;
-    height: 5%;
+    height: 7%;
     position: absolute;
     left:5%;
     top:5%;
-    background-color: var(--page2-block-bg);
-    padding: 20px;
+    background-color: var(--page2-block-bg-dark);
+    padding: 2px;
+    
 }
 .data1-subdata2{
+    
     border-radius: 10px 10px 10px 10px;
     width: 90%;
     height: 80%;
     position: absolute;
     left:5%;
     top:15%;
-    background-color: var(--page2-block-bg);
-    padding: 20px 20px 20px 30px;
+    background-color: var(--page2-block-bg-dark);
+    padding: 20px 20px 20px 40px;
+    
 }
 .data2-subdata{
+    
     border-radius: 10px 10px 10px 10px;
     width: 90%;
-    height: 90%;
+    height: 95%;
     position: absolute;
     left:5%;
-    top:5%;
-    background-color: var(--page2-block-bg);
+    top:0%;
+    background-color: var(--page2-block-bg-dark);
     padding: 20px;
     font-size: var(--p);
     color: rgba(255, 255, 255, 0.692);
-    font-weight: bolder;
+    /* font-weight: bolder; */
 }
 
 
@@ -195,36 +195,38 @@ body::before{
 }
 
 .data3-subdata{
-    border: 2px;
+    
     border-radius: 50px 50px 20px 20px;
     width: 95%;
     height: 90%;
     position: absolute;
     left:2%;
     top:5%;
-    background-color: var(--page2-block-bg);
-    padding: 80px 0px 0px 30px;
+    background-color: var(--page2-block-bg-dark);
+    padding: 110px 0px 0px 30px;
+    line-height: 30px;
     
 }
 
+
 .data4-subdata1{
-    border: 2px;
+    
     border-radius: 5px 5px 50px 50px;
     width: 95%;
     height: 80%;
     position: absolute;
     left:2%;
     top:15%;
-    background-color: var(--page2-block-bg);
+    background-color: var(--page2-block-bg-dark);
 }
 .data4-subdata1::before{
     content:'Today';
     font-size: var(--small);
     position: absolute;
-    border: 2px ;
-    border-radius: 20px 0px 0px 5px;
-    background-color: var(--page2-block-bg);
-    width: 33.3%;
+    
+    border-radius: 20px 20px 0px 5px;
+    background-color: var(--page2-block-bg-dark);
+    width: 30%;
     height: 20%;
     top:-22%;
     display: flex;
@@ -234,8 +236,8 @@ body::before{
     cursor: pointer;
 }
 .data4-subdata2{
-    border: 2px;
-    border-radius: 50px;
+    
+    border-radius: 5px 5px 50px 50px;
     width: 95%;
     height: 80%;
     position: absolute;
@@ -246,13 +248,13 @@ body::before{
     content:'Tomorrow';
     font-size: var(--small);
     position: absolute;
-    border: 2px ;
-    border-radius: 0px 0px 0px 0px;
-    background-color: var(--page2-block-bg);
-    width: 33.3%;
+    
+    border-radius: 20px 20px 0px 0px;
+    background-color: var(--page2-block-bg-dark);
+    width: 30%;
     height: 20%;
     top:-22%;
-    left:33.5%;
+    left:33%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -260,8 +262,8 @@ body::before{
     cursor: pointer;
 }
 .data4-subdata3{
-    border: 2px;
-    border-radius: 50px;
+   
+    border-radius: 5px 5px 50px 50px;
     width: 95%;
     height: 80%;
     position: absolute;
@@ -272,13 +274,13 @@ body::before{
     content:'Day after tomorrow';
     font-size: var(--small);
     position: absolute;
-    border: 2px ;
-    border-radius: 0px 20px 5px 0px;
-    background-color: var(--page2-block-bg);
-    width: 33.3%;
+   
+    border-radius: 20px 20px 5px 0px;
+    background-color: var(--page2-block-bg-dark);
+    width: 30%;
     height: 20%;
-    top:-22%;
-    left:67%;
+    top:-23%;
+    left:70%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -304,16 +306,79 @@ h1::before{
 }
 
 h2{
-    font-size: var(--large);
+    font-size:var(--large);
+    color:  rgba(255, 255, 255, 0.692);
+}
+h2::after{
+    content: '#002';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    font-size:var(--large);
+    color:rgba(10, 184, 211, 0.685);;
+    font-weight: bold;
+    top:40px;
+    left:10px;
+    
+     
 }
 h3{
-    font-size: var(--medium-font);
+    
+    font-size: var(--medium);
     color: var(--color-h1);
+    
 }
 p{
+    color: rgba(240, 248, 255, 0.751);
+    font-size: var(--medium-font);
+    font-weight: bold;
+}
+.center{
+    width: 100%;
+    height: 110%;
+    border: 1px solid rgba(255, 255, 255, 0.692);
+    border-radius: 10px;
+    background-color: var(--page2-block-bg-dark);
+    font-size: var(--medium-font);
+    font-family: var(--global-font);
     color: rgba(255, 255, 255, 0.692);
-    padding-left: 20px;
+    cursor: pointer;
+}
+.center::before{
+    content: url(./image/arrow_back.png);
+    position: absolute;
+    left:10px;
+    top:0%;
     font-size: var(--smaller);
+    color: var(--color-h1);
+}
+.align{
+    margin-top: 20px;
+    line-height: 20px;
+    margin-left: 10px;
+    font-size: var(--smaller);
+}
+.feelslike{
+   
+    margin-left: 10px;
+    font-size: var(--smaller);
+    color: rgba(255, 255, 255, 0.692);
+    
+}
+.loc1,
+.loc2,
+.loc3{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: var(--smaller);;
+    color: rgba(255, 255, 255, 0.692);
+}
+
+.lastupdate{
+    margin-top: 40px;
+    margin-left: 40px;
+    color: var(--color-h1);
+
 }
 #search-container{
     display: flex;
@@ -334,6 +399,7 @@ p{
   margin: 0px 10px 0px 10px;
   width:  var( --search-bar-width);
   height: var(--search-bar-heigth);
+  padding-top: 2px;
   padding-left: 30px;
   font-size: var(--search-button-font-size);
   color: rgba(0, 0, 0, 0.634);
@@ -344,7 +410,7 @@ p{
 .search{
     border: 0px 0px 0px 0px  solid rgb(0, 0, 0);
     border-radius: 10px 10px 10px 10px;
-    padding: 2px 15px 5px 15px;
+    padding: 2px 30px 5px 30px;
     background-color: var(--search-bar-color);
     color: rgb(0, 0, 0);
     height: var(--search-bar-heigth);
@@ -365,6 +431,7 @@ p{
   margin: 0px 10px 0px 10px;
     width:  var( --search-bar-width);
     height: var(--search-bar-heigth);
+    padding-top: 2px;
     padding-left: 30px;
     font-size: var(--search-button-font-size);
     color: rgba(0, 0, 0, 0.634);
@@ -382,59 +449,12 @@ option{
     text-align: start;
 }
 
+/* @media screen and (max-width:1100px) and (min-width:700px) {
+    
+}
 
 @media screen and (max-width:700px) {
-    :root {
-        --larger-h1:clamp(.5rem ,5vw + .2rem, 5rem);
-        --search-button-font-size: 10px;
-        --search-bar-width:clamp(.9rem ,40vw + 1rem, 20rem);
-    }
-   
-    #dashboardcontainer{
-        background-color: rgba(0, 0, 0, 0.42);
-    }
-    #search-container{
-        flex-direction: column;
-    }
-   
-    .location>select{
-        padding-left: 0px;
-        text-align: center;
-         border: 2px solid rgb(255, 255, 255);
-         border-radius: 5px;
-         width:var( --search-bar-width);
-         font-size: var(--search-button-font-size);
-       
-       }
-    .search{
-            margin-top: 10px;
-           border: 2px ;
-           border-radius: 7px;
-           padding: 2.7px 15px 2.7px 15px;
-           width:auto;
-           font-size: var(--search-button-font-size);
-    }
-    .location-region{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 0px;
-        
-    }
-    .location-region>select{
-        margin-top: 10px;
-        padding-left: 0px;
-        text-align: center;
-         border: 2px solid rgb(255, 255, 255);
-         border-radius: 5px;
-         width:var( --search-bar-width);
-         font-size: var(--search-button-font-size);
-      
-    }
-    h1::before{
-        left: 40px; 
-         top:150px;
-    } 
-}
+    
+} */
 
 
